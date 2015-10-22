@@ -36,12 +36,13 @@ comparePWMFreqs <- function(refSeq, testSeq, motifs, minScore="90%", testCounts 
   
   refLen <- unique(width(refSeq))
   if (length(refLen) > 1) stop("All reference sequences must be the same length.\n")
-  if (!grepl("MotifList", motifs)) stop("Motifs must be suppled as a MotifDb::MotifList.\n")
+  if (class(motifs) != "MotifList") stop("Motifs must be suppled as a MotifDb::MotifList.\n")
   if (length(minScore) > 1) {
     warning("Only the first value will be used for the minScore argument\n")
     minScore <- minScore[1]
   }
   stopifnot(all(isPercent(minScore, 0, 100), is.logical(useFisher)))
+
   
   if (is.null(testCounts)) { 
     testLen <- unique(width(testSeq))

@@ -26,7 +26,7 @@
 #' @import Biostrings
 #' @export
 countViews <- function(views, seqLength, singleHits = TRUE){
-  stopifnot(grepl("StringViews", class(views)))
+  stopifnot(class(views) == "XStringViews")
   if (length(seqLength) > 1){
     warning("The argument seqLength can only take single values. All but the first will be ignored")
     seqLength <- seqLength[1]
