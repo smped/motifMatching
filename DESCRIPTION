@@ -1,0 +1,9 @@
+Package: motifMatching
+Type: Package
+Title: Functions used for matching motifs in DNA/RNA Strings
+Version: 1.0
+Date: 2015-10-22
+Author: Steve Pederson
+Maintainer: Steve Pederson <stephen.pederson@adelaide.edu.au>
+Description: Collected from various custom analyses
+License: GPL
